@@ -10,23 +10,16 @@ unobtrusively integrated into any application or framework that supports
 [Express](http://expressjs.com/).
 
 Status:
-[![Build](https://img.shields.io/travis/jaredhanson/passport-twitter.svg)](https://travis-ci.org/jaredhanson/passport-twitter)
-[![Quality](https://img.shields.io/codeclimate/github/jaredhanson/passport-twitter.svg?label=quality)](https://codeclimate.com/github/jaredhanson/passport-twitter)
-[![Coverage](https://img.shields.io/coveralls/jaredhanson/passport-twitter.svg)](https://coveralls.io/r/jaredhanson/passport-twitter)
-[![Dependencies](https://img.shields.io/david/jaredhanson/passport-twitter.svg)](https://david-dm.org/jaredhanson/passport-twitter)
-
-
-## Sponsorship
-
-Passport is open source software.  Ongoing development is made possible by
-generous contributions from [individuals and corporations](https://github.com/jaredhanson/passport/blob/master/SPONSORS.md).
-To learn more about how you can help keep this project financially sustainable,
-please visit Jared Hanson's page on [Patreon](https://www.patreon.com/jaredhanson).
+[![Build Status](https://travis-ci.org/passport-next/passport-twitter.svg?branch=master)](https://travis-ci.org/passport-next/passport-twitter)
+[![Coverage Status](https://coveralls.io/repos/github/passport-next/passport-twitter/badge.svg?branch=master)](https://coveralls.io/github/passport-next/passport-twitter?branch=master)
+[![Maintainability](https://api.codeclimate.com/v1/badges/742fc368752d1de59ba1/maintainability)](https://codeclimate.com/github/passport-next/passport-twitter/maintainability)
+[![Dependencies](https://david-dm.org/passport-next/passport-twitter.png)](https://david-dm.org/passport-next/passport-twitter)
+<!--[![SAST](https://gitlab.com/passport-next/passport-twitter/badges/master/build.svg)](https://gitlab.com/passport-next/passport-twitter/badges/master/build.svg)-->
 
 ## Install
 
 ```bash
-$ npm install passport-twitter
+$ npm install @passport-next/passport-twitter
 ```
 
 ## Usage
@@ -89,9 +82,3 @@ app.get('/auth/twitter/callback',
 Developers using the popular [Express](http://expressjs.com/) web framework can
 refer to an [example](https://github.com/passport/express-4.x-twitter-example)
 as a starting point for their own web applications.
-
-## License
-
-[The MIT License](http://opensource.org/licenses/MIT)
-
-Copyright (c) 2011-2016 Jared Hanson <[http://jaredhanson.net/](http://jaredhanson.net/)>
