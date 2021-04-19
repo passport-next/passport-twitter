@@ -1,3 +1,9 @@
+# 1.2.0 (2021-04-19)
+
+* Updated NPM deps fixing security issues
+* Replaced xtraverse with maintained libxmljs2 thanks to @tomarad jaredhanson/passport-twitter#100
+* Updated travis node versions, minimum node version is now 10
+
 # 1.1.0 (2018-06-29)
 
 * Added CHANGELOG.md @rwky
