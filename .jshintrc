@@ -1,7 +1,7 @@
 {
   "node": true,
   "bitwise": true,
-  "camelcase": true,
+  "camelcase": false,
   "curly": true,
   "forin": true,
   "immed": true,
@@ -12,7 +12,9 @@
   "nonew": true,
   "quotmark": "single",
   "undef": true,
-  "unused": true,
+  "unused": false,
   "trailing": true,
-  "laxcomma": true
+  "laxcomma": true,
+  "proto": true,
+  "noarg": false
 }
