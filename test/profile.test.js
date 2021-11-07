@@ -1,3 +1,5 @@
+/*global describe, it, expect, before */
+
 var Profile = require('../lib/profile')
   , fs = require('fs');
 
@@ -19,7 +21,7 @@ describe('Profile.parse', function() {
       expect(profile.id).to.equal('38895958');
       expect(profile.username).to.equal('theSeanCook');
       expect(profile.displayName).to.equal('Sean Cook');
-      expect(profile.emails).to.be.undefined;
+      expect(profile.emails).to.be.equal(undefined);
       expect(profile.photos[0].value).to.equal('https://si0.twimg.com/profile_images/1751506047/dead_sexy_normal.JPG');
     });
   });
