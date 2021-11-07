@@ -31,7 +31,7 @@
   "main": "./lib",
   "dependencies": {
     "@passport-next/passport-oauth1": "1.2.x",
-    "libxmljs2": "^0.26.7"
+    "libxmljs2": "^0.29.0"
   },
   "devDependencies": {
     "chai": "^4.3.4",
