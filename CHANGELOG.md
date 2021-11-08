@@ -1,3 +1,7 @@
+# 1.2.1 (2021-11-08)
+
+* Updated NPM deps fixing security issues @hthetiot
+
 # 1.2.0 (2021-04-19)
 
 * Updated NPM deps fixing security issues
