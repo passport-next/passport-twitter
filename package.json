@@ -1,6 +1,6 @@
 {
   "name": "@passport-next/passport-twitter",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Twitter authentication strategy for Passport.",
   "keywords": [
     "passport",
