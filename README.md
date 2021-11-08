@@ -10,11 +10,10 @@ unobtrusively integrated into any application or framework that supports
 [Express](http://expressjs.com/).
 
 Status:
-[![Build Status](https://travis-ci.org/passport-next/passport-twitter.svg?branch=master)](https://travis-ci.org/passport-next/passport-twitter)
+[![Build Status](https://app.travis-ci.com/passport-next/passport-twitter.svg?branch=master)](https://app.travis-ci.com/passport-next/passport-twitter)
 [![Coverage Status](https://coveralls.io/repos/github/passport-next/passport-twitter/badge.svg?branch=master)](https://coveralls.io/github/passport-next/passport-twitter?branch=master)
 [![Maintainability](https://api.codeclimate.com/v1/badges/742fc368752d1de59ba1/maintainability)](https://codeclimate.com/github/passport-next/passport-twitter/maintainability)
 [![Dependencies](https://david-dm.org/passport-next/passport-twitter.png)](https://david-dm.org/passport-next/passport-twitter)
-<!--[![SAST](https://gitlab.com/passport-next/passport-twitter/badges/master/build.svg)](https://gitlab.com/passport-next/passport-twitter/badges/master/build.svg)-->
 
 ## Install
 
