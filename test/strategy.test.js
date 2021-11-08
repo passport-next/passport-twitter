@@ -1,3 +1,5 @@
+/*global describe, it, expect, before */
+
 var chai = require('chai')
   , TwitterStrategy = require('../lib/strategy');
 
@@ -13,7 +15,7 @@ describe('Strategy', function() {
     it('should be named twitter', function() {
       expect(strategy.name).to.equal('twitter');
     });
-  })
+  });
   
   describe('constructed with undefined options', function() {
     it('should throw', function() {
@@ -21,7 +23,7 @@ describe('Strategy', function() {
         var strategy = new TwitterStrategy(undefined, function(){});
       }).to.throw(Error);
     });
-  })
+  });
   
   describe('authorization request', function() {
     var strategy = new TwitterStrategy({
@@ -31,7 +33,7 @@ describe('Strategy', function() {
     
     strategy._oauth.getOAuthRequestToken = function(extraParams, callback) {
       callback(null, 'hh5s93j4hdidpola', 'hdhd0244k9j7ao03', {});
-    }
+    };
     
     
     var url;
@@ -61,7 +63,7 @@ describe('Strategy', function() {
     
     strategy._oauth.getOAuthRequestToken = function(extraParams, callback) {
       callback(null, 'hh5s93j4hdidpola', 'hdhd0244k9j7ao03', {});
-    }
+    };
     
     
     var url;
@@ -106,7 +108,7 @@ describe('Strategy', function() {
     });
   
     it('should fail', function() {
-      expect(info).to.be.undefined;
+      expect(info).to.be.equal(undefined);
     });
   });
   
@@ -119,7 +121,7 @@ describe('Strategy', function() {
     
     strategy._oauth.getOAuthRequestToken = function(params, callback) {
       callback({ statusCode: 401, data: '{"errors":[{"code":32,"message":"Could not authenticate you."}]}' });
-    }
+    };
     
     
     var err;
@@ -138,7 +140,7 @@ describe('Strategy', function() {
   
     it('should error', function() {
       expect(err).to.be.an.instanceOf(Error);
-      expect(err.message).to.equal("Could not authenticate you.");
+      expect(err.message).to.equal('Could not authenticate you.');
     });
   });
   
@@ -151,8 +153,8 @@ describe('Strategy', function() {
     
     strategy._oauth.getOAuthRequestToken = function(params, callback) {
       callback({ statusCode: 401, data: '{"foo":"bar"}' });
-    }
-    
+    };
+
     
     var err;
   
@@ -184,7 +186,7 @@ describe('Strategy', function() {
     
     strategy._oauth.getOAuthRequestToken = function(params, callback) {
       callback({ statusCode: 401, data: '<?xml version="1.0" encoding="UTF-8"?>\n<hash>\n  <error>This client application\'s callback url has been locked</error>\n  <request>/oauth/request_token</request>\n</hash>\n' });
-    }
+    };
     
     
     var err;
@@ -203,7 +205,7 @@ describe('Strategy', function() {
   
     it('should error', function() {
       expect(err).to.be.an.instanceOf(Error);
-      expect(err.message).to.equal("This client application's callback url has been locked");
+      expect(err.message).to.equal('This client application\'s callback url has been locked');
     });
   });
   
@@ -216,7 +218,7 @@ describe('Strategy', function() {
     
     strategy._oauth.getOAuthAccessToken = function(token, tokenSecret, verifier, callback) {
       callback({ statusCode: 401, data: 'Invalid request token.' });
-    }
+    };
     
     
     var err;
@@ -229,19 +231,19 @@ describe('Strategy', function() {
         })
         .req(function(req) {
           req.query = {};
-          req.query['oauth_token'] = 'x-hh5s93j4hdidpola';
-          req.query['oauth_verifier'] = 'hfdp7dh39dks9884';
+          req.query.oauth_token = 'x-hh5s93j4hdidpola';
+          req.queryoauth_verifier = 'hfdp7dh39dks9884';
           req.session = {};
           req.session['oauth:twitter'] = {};
-          req.session['oauth:twitter']['oauth_token'] = 'x-hh5s93j4hdidpola';
-          req.session['oauth:twitter']['oauth_token_secret'] = 'hdhd0244k9j7ao03';
+          req.session['oauth:twitter'].oauth_token = 'x-hh5s93j4hdidpola';
+          req.session['oauth:twitter'].oauth_token_secret = 'hdhd0244k9j7ao03';
         })
         .authenticate();
     });
   
     it('should error', function() {
       expect(err).to.be.an.instanceOf(Error);
-      expect(err.message).to.equal("Invalid request token.");
+      expect(err.message).to.equal('Invalid request token.');
     });
   });
   
@@ -254,7 +256,7 @@ describe('Strategy', function() {
     
     strategy._oauth.getOAuthAccessToken = function(token, tokenSecret, verifier, callback) {
       callback({ statusCode: 401, data: 'Error processing your OAuth request: Invalid oauth_verifier parameter' });
-    }
+    };
     
     
     var err;
@@ -267,19 +269,19 @@ describe('Strategy', function() {
         })
         .req(function(req) {
           req.query = {};
-          req.query['oauth_token'] = 'hh5s93j4hdidpola';
-          req.query['oauth_verifier'] = 'x-hfdp7dh39dks9884';
+          req.query.oauth_token = 'hh5s93j4hdidpola';
+          req.query.oauth_verifier = 'x-hfdp7dh39dks9884';
           req.session = {};
           req.session['oauth:twitter'] = {};
-          req.session['oauth:twitter']['oauth_token'] = 'hh5s93j4hdidpola';
-          req.session['oauth:twitter']['oauth_token_secret'] = 'hdhd0244k9j7ao03';
+          req.session['oauth:twitter'].oauth_token = 'hh5s93j4hdidpola';
+          req.session['oauth:twitter'].oauth_token_secret = 'hdhd0244k9j7ao03';
         })
         .authenticate();
     });
   
     it('should error', function() {
       expect(err).to.be.an.instanceOf(Error);
-      expect(err.message).to.equal("Error processing your OAuth request: Invalid oauth_verifier parameter");
+      expect(err.message).to.equal('Error processing your OAuth request: Invalid oauth_verifier parameter');
     });
   });
   
