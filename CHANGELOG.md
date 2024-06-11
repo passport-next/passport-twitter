@@ -1,3 +1,11 @@
+# 2.0.0 (2024-06-11)
+
+**BREAKING CHANGE**
+XML errors are now returned as raw XML not parsed.
+
+* Updated NPM deps
+* Removed libxml2 since it's no longer maintained
+
 # 1.2.1 (2021-11-08)
 
 * Updated NPM deps fixing security issues @hthetiot

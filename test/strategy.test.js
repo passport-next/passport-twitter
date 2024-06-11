@@ -181,9 +181,11 @@ describe('Strategy', function() {
       consumerSecret: 'secret',
       callbackURL: 'http://www.example.test/invalid-callback'
     }, function verify(){});
+
+    var data = '<?xml version="1.0" encoding="UTF-8"?>\n<hash>\n  <error>This client application\'s callback url has been locked</error>\n  <request>/oauth/request_token</request>\n</hash>\n';
     
     strategy._oauth.getOAuthRequestToken = function(params, callback) {
-      callback({ statusCode: 401, data: '<?xml version="1.0" encoding="UTF-8"?>\n<hash>\n  <error>This client application\'s callback url has been locked</error>\n  <request>/oauth/request_token</request>\n</hash>\n' });
+      callback({ statusCode: 401, data });
     }
     
     
@@ -203,7 +205,7 @@ describe('Strategy', function() {
   
     it('should error', function() {
       expect(err).to.be.an.instanceOf(Error);
-      expect(err.message).to.equal("This client application's callback url has been locked");
+      expect(err.message).to.equal(data);
     });
   });
   
